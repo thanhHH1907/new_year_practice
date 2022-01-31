@@ -1,0 +1,38 @@
+body {
+  background-color: hsl(0, 7%, 16%);
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  margin: 1em auto;
+  text-shadow: 0.05em 0.05em 0.1em black;
+}
+
+section {
+  margin: 1em;
+  background-color: cadetblue;
+  padding: 0.5em
+}
+
+p {
+  margin: 1em;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color:hsl(25, 75%, 47%);
+  text-shadow: 0.05em 0.05em 0.05em black;
+}
+
+a:hover {
+  color:hsla(25, 75%, 47%, 0.726);
+  text-decoration: underline;
+}
