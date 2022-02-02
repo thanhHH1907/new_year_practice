@@ -1,0 +1,135 @@
+:root {
+  --red: #ff4d4d;
+  --black: #3d3d3d;
+}
+
+body {
+  position: relative;
+  background-color: var(--black);
+  width: 100%;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: var(--black);
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 10%;
+  z-index: 1;
+  background-color: var(--red);
+  animation: runmap 10s linear infinite;
+}
+
+/* CARD */
+#card {
+  position: relative;
+  width: 30%;
+  margin: 100px auto;
+  background-color: white;
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  box-shadow: -0.2em 0.2em 0.3em var(--red);
+}
+
+/* CARD HEAD */
+#card-head {
+  flex: 1 1;
+}
+
+#card-head > img {
+  border-radius: 10px 10px 0 0;
+  height: 80%;
+  width: 100%;
+  padding-bottom: 1em;
+}
+
+#card-head > h1 {
+  font-size: 2em;
+  padding-left: 0.5em;
+  text-shadow: 0.01em 0.01em 0.01em var(--red);
+}
+/* CARD BODY */
+
+#card-body {
+  padding-top: 0.5em;
+  flex: 1 1;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+#card-body p {
+  padding-left: 1em;
+}
+#card-body #direction {
+  position: relative;
+  margin: 1em auto;
+  color: var(--black);
+  font-weight: 700;
+  background-color: var(--red);
+  padding: 1em;
+  border: none;
+  border-radius: 10px;
+}
+
+#card-body #direction::before {
+  content: '';
+}
+
+#card-body #direction:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  color: var(--red);
+  background-color: var(--black);
+  border: 1px solid var(--red)
+}
+
+#card-body #direction:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 10px;
+  width: 10%;
+  background-color: var(--red);
+  z-index: 1;
+  transform: translateX(600%) scale(0);
+  transition: 2s ease;
+}
+
+#card-body #direction:active {
+  transform: scale(0.5);
+  background-color:var(--red);
+  transition: 0.1s;
+}
+
+@keyframes runmap {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  25% {
+    transform: scaleX(0);
+    top: 0;
+    left: 50%;
+  }
+
+  50% {
+    transform: scaleX(1);
+    top: 0;
+    left: 90%;
+  }
+
+  75% {
+    transform: scaleX(0);
+    top: 0;
+    left: 50%;
+  }
+  100% {
+    transform: scaleX(1);
+    top: 0;
+    left: 0%;
+  }
+}
